@@ -27,20 +27,32 @@ class ProdutoController extends Controller
         return view('produtos/criar');
     }
 
+    // public function inserir(Request $form) {
+    //     $dados = $form->validate([
+    //         'nome' => 'required',
+    //         'preco' => 'required',
+    //         'descricao' => 'required'
+    //     ]);
+
+    //     $produto = new Produto();
+
+    //     $produto->nome = $form->nome;
+    //     $produto->preco = $form->preco;
+    //     $produto->descricao = $form->descricao;
+
+    //     $produto->save();
+
+    //     return redirect()->route('produto');
+    // }
+
     public function inserir(Request $form) {
         $dados = $form->validate([
-            'nome' => 'required',
+            'nome' => 'required|max:255',
             'preco' => 'required',
             'descricao' => 'required'
         ]);
 
-        $produto = new Produto();
-
-        $produto->nome = $form->nome;
-        $produto->preco = $form->preco;
-        $produto->descricao = $form->descricao;
-
-        $produto->save();
+        Produto::create($dados);
 
         return redirect()->route('produto');
     }
