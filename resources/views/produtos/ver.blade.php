@@ -12,4 +12,5 @@
     {{-- Outra forma de mostrar as informações na tela --}}
     {{-- Tanto ->preco quanto ['preco'] --}}
     <p><strong>Descrição:</strong> {{ $produto['descricao'] }}</p>
+    <p><img src="{{asset('/img/'. $produto->img)}}"></p>
 @endsection

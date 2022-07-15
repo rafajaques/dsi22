@@ -19,12 +19,14 @@ class ProdutoSeeder extends Seeder
             'nome' => 'Bermuda',
             'descricao' => 'Uma bermuda legal',
             'preco' => 70.5,
+            'categoria_id' => 1,
         ]);
 
         DB::table('produtos')->insert([
             'nome' => 'Boné',
             'descricao' => 'Um boné mais ou menos',
             'preco' => 32.75,
+            'categoria_id' => 2
         ]);
     }
 }

@@ -24,6 +24,7 @@
         <tr>
             <th>Produto</th>
             <th>Preço</th>
+            <th>Categoria</th>
         </tr>
 
         @foreach($prods as $prod)
@@ -34,6 +35,7 @@
                 </a>
             </td>
             <td>{{ $prod->preco }}</td>
+            <td>{{ $prod->categoria->nome }}</td>
         </tr>    
         @endforeach
         
